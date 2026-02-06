@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTANBUL SAYOHATI - Тур в Стамбул 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a2980;
+            --secondary-blue: #26d0ce;
+            --accent-orange: #ff7e30;
+            --accent-gold: #ffc107;
+            --light-bg: #f8f9fa;
+            --dark-text: #2d3748;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: var(--dark-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 60px;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(26, 41, 128, 0.85), rgba(38, 208, 206, 0.8)), 
+                              url('https://images.unsplash.com/photo-1527838832700-5059252407fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            padding: 40px;
+            max-width: 900px;
+            animation: fadeUp 1s ease-out;
+        }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--accent-gold);
+            letter-spacing: 3px;
+        }
+        
+        .tour-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .info-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .info-badge:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+        }
+        
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        /* Hotels Section */
+        .hotels-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .hotel-card {
+            flex: 1;
+            min-width: 350px;
+            max-width: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background: var(--white);
+            position: relative;
+        }
+        
+        .hotel-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hotel-image {
+            height: 250px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .hotel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 20px;
+            color: white;
+        }
+        
+        .hotel-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .hotel-location {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .hotel-stars {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+        
+        .hotel-body {
+            padding: 30px;
+        }
+        
+        .hotel-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        
+        .hotel-detail i {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .hotel-price {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px dashed #eaeaea;
+        }
+        
+        .price-from {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .price-amount {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            line-height: 1;
+        }
+        
+        /* Included Section */
+        .included-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .included-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .included-title {
+            color: white;
+        }
+        
+        .included-title::after {
+            background: linear-gradient(to right, var(--accent-gold), var(--accent-orange));
+        }
+        
+        .included-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .included-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .included-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .included-item i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+        
+        .included-item h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 60px 30px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
+        }
+        
+        .contact-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        .phone-number {
+            display: inline-block;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            text-decoration: none;
+            margin: 20px 0;
+            transition: var(--transition);
+            padding: 10px 20px;
+            border-radius: 15px;
+        }
+        
+        .phone-number:hover {
+            background: rgba(255, 126, 48, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .booking-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(26, 41, 128, 0.2);
+        }
+        
+        .booking-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(26, 41, 128, 0.3);
+            background: linear-gradient(135deg, #152267 0%, #20b8b6 100%);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            font-size: 0.95rem;
+            border-top: 1px solid #eaeaea;
+            margin-top: 60px;
+        }
+        
+        /* Hotel Specific Images */
+        .grand-liza {
+            background-image: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+        }
+        
+        .vavien {
+            background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+        }
+        
+        .delta {
+            background-image: url('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hotel-card {
+                min-width: 320px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero {
+                height: 75vh;
+                min-height: 500px;
+            }
+            
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.9rem;
+            }
+            
+            .phone-number {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 65vh;
+                border-radius: 0 0 30px 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.7rem;
+                letter-spacing: 2px;
+            }
+            
+            .tour-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .info-badge {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .hotel-card {
+                min-width: 100%;
+            }
+            
+            .phone-number {
+                font-size: 1.9rem;
+            }
+            
+            .included-section {
+                padding: 60px 20px;
+                border-radius: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 60vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .booking-btn {
+                width: 100%;
+                padding: 16px 30px;
+            }
+            
+            .hotel-body {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>ISTANBUL</h1>
+            <h2>SAYOHATI</h2>
+            <div class="tour-info">
+                <div class="info-badge">22 mart 2026</div>
+                <div class="info-badge">Toshkent – Istanbul – Toshkent</div>
+                <div class="info-badge">5 tun / 6 kun</div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <!-- Hotels Section -->
+        <section class="hotels-section">
+            <div class="section-title">
+                <h2>MEHMONXONA VARIANTLARI</h2>
+            </div>
+            
+            <div class="hotels-container">
+                <!-- Hotel 1 -->
+                <div class="hotel-card">
+                    <div class="hotel-image grand-liza">
+                        <div class="hotel-overlay">
+                            <div class="hotel-name">GRAND LIZA HOTEL</div>
+                            <div class="hotel-location">Sultonaħmet, Istanbul</div>
+                            <div class="hotel-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hotel-body">
+                        <div class="hotel-detail">
+                            <i class="fas fa-user-friends"></i>
+                            <div>2 kishilik Standard xona</div>
+                        </div>
+                        <div class="hotel-detail">
+                            <i class="fas fa-coffee"></i>
+                            <div>Nonushta BB (Nonushta kiritilgan)</div>
+                        </div>
+                        <div class="hotel-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>Sultonahmetdagi tarixiy markazda, asosiy diqqatga sazovor joylarga yaqin</div>
+                        </div>
+                        <div class="hotel-price">
+                            <div class="price-from">boshlang'ich narx</div>
+                            <div class="price-amount">1,200 USD</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 2 -->
+                <div class="hotel-card">
+                    <div class="hotel-image vavien">
+                        <div class="hotel-overlay">
+                            <div class="hotel-name">VAVIEN HOTEL</div>
+                            <div class="hotel-location">Galata, Istanbul</div>
+                            <div class="hotel-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hotel-body">
+                        <div class="hotel-detail">
+                            <i class="fas fa-user-friends"></i>
+                            <div>2 kishilik Double xona</div>
+                        </div>
+                        <div class="hotel-detail">
+                            <i class="fas fa-utensils"></i>
+                            <div>Ovqatsiz RO (Faqat turar joy)</div>
+                        </div>
+                        <div class="hotel-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>Galata kvartalida, zamonaviy Istanbulning markazida joylashgan</div>
+                        </div>
+                        <div class="hotel-price">
+                            <div class="price-from">boshlang'ich narx</div>
+                            <div class="price-amount">1,200 USD</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hotel 3 -->
+                <div class="hotel-card">
+                    <div class="hotel-image delta">
+                        <div class="hotel-overlay">
+                            <div class="hotel-name">DELTA HOTEL</div>
+                            <div class="hotel-location">Laleli, Istanbul</div>
+                            <div class="hotel-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hotel-body">
+                        <div class="hotel-detail">
+                            <i class="fas fa-user-friends"></i>
+                            <div>2 kishilik Standard xona</div>
+                        </div>
+                        <div class="hotel-detail">
+                            <i class="fas fa-coffee"></i>
+                            <div>Nonushta BB (Nonushta kiritilgan)</div>
+                        </div>
+                        <div class="hotel-detail">
+                            <i class="fas fa-map-marker-alt"><
